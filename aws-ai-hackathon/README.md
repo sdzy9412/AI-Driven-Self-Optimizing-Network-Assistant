@@ -31,6 +31,24 @@ apply optimization actions, and verify KPI improvement.
 | Energy (kWh) | 3.9 → 3.1 | 4.4 → 3.5 | −20% |
 | MTTR | ~30 min (manual) | < 5 min (agent) | −83% |
 
+## Deployed AWS Architecture (Live Demo)
+
+The self-healing loop is partially deployed on AWS using **CloudFormation**:
+
+- **Amazon S3** – stores unified telemetry snapshots (`mock_metrics.json`, `before_after_metrics.csv`).
+- **AWS Lambda (`apply_recovery_action`)** – executes AI-recommended actions such as `traffic_steering` and logs auditable records.
+- **Amazon DynamoDB (`NetworkChangeAudit`)** – stores each executed change with timestamp, action, confidence, and rollback window.
+
+![Architecture](docs/architecture_diagram.png)
+
+**Validation results:**
+- ✅ Lambda executed successfully and returned a JSON response.  
+- ✅ DynamoDB recorded an audit item automatically.  
+- ✅ All resources were created via a single CloudFormation stack (`infra/template.yaml`).
+
+> This confirms that the execution & audit leg of our self-healing network runs live inside AWS.
+
+
 ## How to Run
 ```bash
 pip install streamlit pandas
