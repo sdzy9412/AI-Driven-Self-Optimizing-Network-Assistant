@@ -1,0 +1,98 @@
+[
+  {
+    "cell_id": "cell-CRITICAL-01",
+    "before": {
+      "latency_ms": 350,
+      "packet_loss": 8.2,
+      "utilization_pct": 95,
+      "energy_kwh": 4.8,
+      "status": "critical"
+    },
+    "after": {
+      "latency_ms": 180,
+      "packet_loss": 2.1,
+      "utilization_pct": 70,
+      "energy_kwh": 4.1,
+      "status": "optimized"
+    },
+    "action_taken": "load_balancing",
+    "confidence": 0.92,
+    "auto_executed": true,
+    "impact": {
+      "latency_reduction": "48.6%",
+      "packet_loss_reduction": "74.4%", 
+      "utilization_reduction": "26.3%",
+      "energy_savings": "14.6%"
+    }
+  },
+  {
+    "cell_id": "cell-UNCLEAR-02",
+    "before": {
+      "latency_ms": 180,
+      "packet_loss": 2.1,
+      "utilization_pct": 65,
+      "energy_kwh": 2.8,
+      "status": "moderate"
+    },
+    "after": {
+      "latency_ms": 180,
+      "packet_loss": 2.1,
+      "utilization_pct": 65,
+      "energy_kwh": 2.8,
+      "status": "pending_human_review"
+    },
+    "action_recommended": "traffic_steering",
+    "confidence": 0.68,
+    "auto_executed": false,
+    "reason_blocked": "Confidence 68% below 80% safety threshold",
+    "human_approval_required": true
+  },
+  {
+    "cell_id": "cell-DEGRADED-03", 
+    "before": {
+      "latency_ms": 290,
+      "packet_loss": 5.5,
+      "utilization_pct": 88,
+      "energy_kwh": 4.2,
+      "status": "degraded"
+    },
+    "after": {
+      "latency_ms": 165,
+      "packet_loss": 1.8,
+      "utilization_pct": 66,
+      "energy_kwh": 3.6,
+      "status": "optimized"
+    },
+    "action_taken": "load_balancing",
+    "confidence": 0.85,
+    "auto_executed": true,
+    "impact": {
+      "latency_reduction": "43.1%",
+      "packet_loss_reduction": "67.3%",
+      "utilization_reduction": "25.0%", 
+      "energy_savings": "14.3%"
+    }
+  },
+  {
+    "cell_id": "cell-AMBIGUOUS-04",
+    "before": {
+      "latency_ms": 150,
+      "packet_loss": 1.8,
+      "utilization_pct": 72,
+      "energy_kwh": 3.1,
+      "status": "borderline"
+    },
+    "after": {
+      "latency_ms": 150,
+      "packet_loss": 1.8,
+      "utilization_pct": 72,
+      "energy_kwh": 3.1,
+      "status": "pending_human_review"
+    },
+    "action_recommended": "traffic_steering",
+    "confidence": 0.55,
+    "auto_executed": false,
+    "reason_blocked": "Confidence 55% below 80% safety threshold",
+    "human_approval_required": true
+  }
+]

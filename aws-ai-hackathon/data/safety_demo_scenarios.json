@@ -1,0 +1,58 @@
+[
+  {
+    "timestamp": "2025-11-01T10:00:00Z",
+    "cell_id": "cell-CRITICAL-01",
+    "region": "eu-west-1",
+    "latency_ms": 350,
+    "packet_loss": 8.2,
+    "throughput_mbps": 85,
+    "utilization_pct": 95,
+    "energy_kwh": 4.8,
+    "status": "incident",
+    "severity": "critical",
+    "expected_confidence": 0.92,
+    "description": "Severe congestion with very high utilization and packet loss"
+  },
+  {
+    "timestamp": "2025-11-01T10:05:00Z",
+    "cell_id": "cell-UNCLEAR-02",
+    "region": "eu-west-1", 
+    "latency_ms": 180,
+    "packet_loss": 2.1,
+    "throughput_mbps": 140,
+    "utilization_pct": 65,
+    "energy_kwh": 2.8,
+    "status": "incident",
+    "severity": "moderate",
+    "expected_confidence": 0.68,
+    "description": "Moderate issues with unclear root cause"
+  },
+  {
+    "timestamp": "2025-11-01T10:10:00Z",
+    "cell_id": "cell-DEGRADED-03",
+    "region": "eu-west-1",
+    "latency_ms": 290,
+    "packet_loss": 5.5,
+    "throughput_mbps": 95,
+    "utilization_pct": 88,
+    "energy_kwh": 4.2,
+    "status": "incident", 
+    "severity": "high",
+    "expected_confidence": 0.85,
+    "description": "Clear congestion pattern requiring load balancing"
+  },
+  {
+    "timestamp": "2025-11-01T10:15:00Z",
+    "cell_id": "cell-AMBIGUOUS-04",
+    "region": "eu-west-1",
+    "latency_ms": 150,
+    "packet_loss": 1.8,
+    "throughput_mbps": 160,
+    "utilization_pct": 72,
+    "energy_kwh": 3.1,
+    "status": "incident",
+    "severity": "low",
+    "expected_confidence": 0.55,
+    "description": "Borderline metrics with insufficient data for confident diagnosis"
+  }
+]
