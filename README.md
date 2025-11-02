@@ -81,5 +81,3 @@ _“Upload → Detect → Optimize → Audit” in real-time._
 
 ---
 
-## 📁 Repository Structure
-
