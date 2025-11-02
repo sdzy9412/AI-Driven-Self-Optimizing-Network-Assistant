@@ -1,0 +1,81 @@
+[
+    {
+      "timestamp": "2025-11-01T08:00:00Z",
+      "cell_id": "cell-A01",
+      "region": "eu-west-1",
+      "latency_ms": 48,
+      "packet_loss": 0.1,
+      "throughput_mbps": 120,
+      "utilization_pct": 42,
+      "energy_kwh": 2.3,
+      "status": "normal",
+      "action_applied": null,
+      "ai_confidence": null
+    },
+    {
+      "timestamp": "2025-11-01T08:05:00Z",
+      "cell_id": "cell-A01",
+      "region": "eu-west-1",
+      "latency_ms": 310,
+      "packet_loss": 5.8,
+      "throughput_mbps": 118,
+      "utilization_pct": 91,
+      "energy_kwh": 3.9,
+      "status": "incident",
+      "action_applied": null,
+      "ai_confidence": 0.81
+    },
+    {
+      "timestamp": "2025-11-01T08:10:00Z",
+      "cell_id": "cell-A01",
+      "region": "eu-west-1",
+      "latency_ms": 140,
+      "packet_loss": 2.2,
+      "throughput_mbps": 125,
+      "utilization_pct": 69,
+      "energy_kwh": 3.1,
+      "status": "optimized",
+      "action_applied": "traffic_steering",
+      "ai_confidence": 0.84
+    },
+    {
+      "timestamp": "2025-11-01T08:15:00Z",
+      "cell_id": "cell-B17",
+      "region": "eu-west-1",
+      "latency_ms": 55,
+      "packet_loss": 0.2,
+      "throughput_mbps": 210,
+      "utilization_pct": 50,
+      "energy_kwh": 2.9,
+      "status": "normal",
+      "action_applied": null,
+      "ai_confidence": null
+    },
+    {
+      "timestamp": "2025-11-01T08:20:00Z",
+      "cell_id": "cell-B17",
+      "region": "eu-west-1",
+      "latency_ms": 270,
+      "packet_loss": 4.9,
+      "throughput_mbps": 205,
+      "utilization_pct": 88,
+      "energy_kwh": 4.4,
+      "status": "incident",
+      "action_applied": null,
+      "ai_confidence": 0.76
+    },
+    {
+      "timestamp": "2025-11-01T08:25:00Z",
+      "cell_id": "cell-B17",
+      "region": "eu-west-1",
+      "latency_ms": 115,
+      "packet_loss": 1.9,
+      "throughput_mbps": 215,
+      "utilization_pct": 63,
+      "energy_kwh": 3.5,
+      "status": "optimized",
+      "action_applied": "load_balancing",
+      "ai_confidence": 0.82
+    }
+  ]
+  
