@@ -1,0 +1,7 @@
+timestamp,cell_id,region,latency_ms,packet_loss,throughput_mbps,utilization_pct,energy_kwh,status,action_applied,ai_confidence
+2025-11-01T08:00:00Z,cell-A01,eu-west-1,48,0.1,120,42,2.3,normal,,
+2025-11-01T08:05:00Z,cell-A01,eu-west-1,310,5.8,118,91,3.9,incident,,0.81
+2025-11-01T08:10:00Z,cell-A01,eu-west-1,140,2.2,125,69,3.1,optimized,traffic_steering,0.84
+2025-11-01T08:15:00Z,cell-B17,eu-west-1,55,0.2,210,50,2.9,normal,,
+2025-11-01T08:20:00Z,cell-B17,eu-west-1,270,4.9,205,88,4.4,incident,,0.76
+2025-11-01T08:25:00Z,cell-B17,eu-west-1,115,1.9,215,63,3.5,optimized,load_balancing,0.82
