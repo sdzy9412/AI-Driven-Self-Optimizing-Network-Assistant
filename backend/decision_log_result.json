@@ -1,0 +1,392 @@
+[
+  {
+    "timestamp": "2025-11-01T14:56:21.211657",
+    "demo_run": true,
+    "scenario_id": 1,
+    "cell_id": "cell-CRITICAL-01",
+    "metrics": {
+      "latency_ms": 350,
+      "utilization_pct": 95,
+      "packet_loss": 8.2
+    },
+    "ai_analysis": {
+      "action": "load_balancing",
+      "confidence": 0.92,
+      "reasoning": "Clear network congestion with high utilization and packet loss"
+    },
+    "safety_check": {
+      "auto_execute": true,
+      "threshold": 0.8,
+      "confidence": 0.92,
+      "status": "AUTO_APPROVED",
+      "safety_check": "PASSED"
+    },
+    "execution_result": {
+      "status": "EXECUTED",
+      "action": "load_balancing",
+      "cell_id": "cell-CRITICAL-01",
+      "executed": true,
+      "safety_status": "AUTO_APPROVED",
+      "impact": {
+        "utilization_reduction": "25%",
+        "energy_savings": "15%",
+        "execution_time": "1.2s"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-11-01T14:56:21.212492",
+    "demo_run": true,
+    "scenario_id": 2,
+    "cell_id": "cell-UNCLEAR-02",
+    "metrics": {
+      "latency_ms": 180,
+      "utilization_pct": 65,
+      "packet_loss": 2.1
+    },
+    "ai_analysis": {
+      "action": "traffic_steering",
+      "confidence": 0.68,
+      "reasoning": "Moderate issues but unclear root cause - more investigation needed"
+    },
+    "safety_check": {
+      "auto_execute": false,
+      "threshold": 0.8,
+      "confidence": 0.68,
+      "status": "HUMAN_APPROVAL_REQUIRED",
+      "safety_check": "BLOCKED"
+    },
+    "execution_result": {
+      "status": "BLOCKED",
+      "reason": "Confidence 68.0% below 80.0% threshold",
+      "executed": false,
+      "requires_human_approval": true,
+      "safety_status": "BLOCKED_FOR_SAFETY"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T14:56:21.213188",
+    "demo_run": true,
+    "scenario_id": 3,
+    "cell_id": "cell-DEGRADED-03",
+    "metrics": {
+      "latency_ms": 290,
+      "utilization_pct": 88,
+      "packet_loss": 5.5
+    },
+    "ai_analysis": {
+      "action": "load_balancing",
+      "confidence": 0.85,
+      "reasoning": "High confidence in congestion diagnosis and load balancing solution"
+    },
+    "safety_check": {
+      "auto_execute": true,
+      "threshold": 0.8,
+      "confidence": 0.85,
+      "status": "AUTO_APPROVED",
+      "safety_check": "PASSED"
+    },
+    "execution_result": {
+      "status": "EXECUTED",
+      "action": "load_balancing",
+      "cell_id": "cell-DEGRADED-03",
+      "executed": true,
+      "safety_status": "AUTO_APPROVED",
+      "impact": {
+        "utilization_reduction": "25%",
+        "energy_savings": "15%",
+        "execution_time": "1.2s"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-11-01T14:56:21.213780",
+    "demo_run": true,
+    "scenario_id": 4,
+    "cell_id": "cell-AMBIGUOUS-04",
+    "metrics": {
+      "latency_ms": 150,
+      "utilization_pct": 72,
+      "packet_loss": 1.8
+    },
+    "ai_analysis": {
+      "action": "traffic_steering",
+      "confidence": 0.55,
+      "reasoning": "Borderline metrics - insufficient data for confident recommendation"
+    },
+    "safety_check": {
+      "auto_execute": false,
+      "threshold": 0.8,
+      "confidence": 0.55,
+      "status": "HUMAN_APPROVAL_REQUIRED",
+      "safety_check": "BLOCKED"
+    },
+    "execution_result": {
+      "status": "BLOCKED",
+      "reason": "Confidence 55.0% below 80.0% threshold",
+      "executed": false,
+      "requires_human_approval": true,
+      "safety_status": "BLOCKED_FOR_SAFETY"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T14:58:24.064454",
+    "demo_run": true,
+    "scenario_id": 1,
+    "cell_id": "cell-CRITICAL-01",
+    "metrics": {
+      "latency_ms": 350,
+      "utilization_pct": 95,
+      "packet_loss": 8.2
+    },
+    "ai_analysis": {
+      "action": "load_balancing",
+      "confidence": 0.92,
+      "reasoning": "Clear network congestion with high utilization and packet loss"
+    },
+    "safety_check": {
+      "auto_execute": true,
+      "threshold": 0.8,
+      "confidence": 0.92,
+      "status": "AUTO_APPROVED",
+      "safety_check": "PASSED"
+    },
+    "execution_result": {
+      "status": "EXECUTED",
+      "action": "load_balancing",
+      "cell_id": "cell-CRITICAL-01",
+      "executed": true,
+      "safety_status": "AUTO_APPROVED",
+      "impact": {
+        "utilization_reduction": "25%",
+        "energy_savings": "15%",
+        "execution_time": "1.2s"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-11-01T14:58:24.065672",
+    "demo_run": true,
+    "scenario_id": 2,
+    "cell_id": "cell-UNCLEAR-02",
+    "metrics": {
+      "latency_ms": 180,
+      "utilization_pct": 65,
+      "packet_loss": 2.1
+    },
+    "ai_analysis": {
+      "action": "traffic_steering",
+      "confidence": 0.68,
+      "reasoning": "Moderate issues but unclear root cause - more investigation needed"
+    },
+    "safety_check": {
+      "auto_execute": false,
+      "threshold": 0.8,
+      "confidence": 0.68,
+      "status": "HUMAN_APPROVAL_REQUIRED",
+      "safety_check": "BLOCKED"
+    },
+    "execution_result": {
+      "status": "BLOCKED",
+      "reason": "Confidence 68.0% below 80.0% threshold",
+      "executed": false,
+      "requires_human_approval": true,
+      "safety_status": "BLOCKED_FOR_SAFETY"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T14:58:24.066446",
+    "demo_run": true,
+    "scenario_id": 3,
+    "cell_id": "cell-DEGRADED-03",
+    "metrics": {
+      "latency_ms": 290,
+      "utilization_pct": 88,
+      "packet_loss": 5.5
+    },
+    "ai_analysis": {
+      "action": "load_balancing",
+      "confidence": 0.85,
+      "reasoning": "High confidence in congestion diagnosis and load balancing solution"
+    },
+    "safety_check": {
+      "auto_execute": true,
+      "threshold": 0.8,
+      "confidence": 0.85,
+      "status": "AUTO_APPROVED",
+      "safety_check": "PASSED"
+    },
+    "execution_result": {
+      "status": "EXECUTED",
+      "action": "load_balancing",
+      "cell_id": "cell-DEGRADED-03",
+      "executed": true,
+      "safety_status": "AUTO_APPROVED",
+      "impact": {
+        "utilization_reduction": "25%",
+        "energy_savings": "15%",
+        "execution_time": "1.2s"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-11-01T14:58:24.067142",
+    "demo_run": true,
+    "scenario_id": 4,
+    "cell_id": "cell-AMBIGUOUS-04",
+    "metrics": {
+      "latency_ms": 150,
+      "utilization_pct": 72,
+      "packet_loss": 1.8
+    },
+    "ai_analysis": {
+      "action": "traffic_steering",
+      "confidence": 0.55,
+      "reasoning": "Borderline metrics - insufficient data for confident recommendation"
+    },
+    "safety_check": {
+      "auto_execute": false,
+      "threshold": 0.8,
+      "confidence": 0.55,
+      "status": "HUMAN_APPROVAL_REQUIRED",
+      "safety_check": "BLOCKED"
+    },
+    "execution_result": {
+      "status": "BLOCKED",
+      "reason": "Confidence 55.0% below 80.0% threshold",
+      "executed": false,
+      "requires_human_approval": true,
+      "safety_status": "BLOCKED_FOR_SAFETY"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T11:31:51.857803",
+    "demo_run": true,
+    "scenario_id": 1,
+    "cell_id": "cell-CRITICAL-01",
+    "metrics": {
+      "latency_ms": 350,
+      "utilization_pct": 95,
+      "packet_loss": 8.2
+    },
+    "ai_analysis": {
+      "action": "load_balancing",
+      "confidence": 0.92,
+      "reasoning": "Clear network congestion with high utilization and packet loss"
+    },
+    "safety_check": {
+      "auto_execute": true,
+      "threshold": 0.8,
+      "confidence": 0.92,
+      "status": "AUTO_APPROVED",
+      "safety_check": "PASSED"
+    },
+    "execution_result": {
+      "status": "EXECUTED",
+      "action": "load_balancing",
+      "cell_id": "cell-CRITICAL-01",
+      "executed": true,
+      "safety_status": "AUTO_APPROVED",
+      "impact": {
+        "utilization_reduction": "25%",
+        "energy_savings": "15%",
+        "execution_time": "1.2s"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-11-02T11:31:51.859090",
+    "demo_run": true,
+    "scenario_id": 2,
+    "cell_id": "cell-UNCLEAR-02",
+    "metrics": {
+      "latency_ms": 180,
+      "utilization_pct": 65,
+      "packet_loss": 2.1
+    },
+    "ai_analysis": {
+      "action": "traffic_steering",
+      "confidence": 0.68,
+      "reasoning": "Moderate issues but unclear root cause - more investigation needed"
+    },
+    "safety_check": {
+      "auto_execute": false,
+      "threshold": 0.8,
+      "confidence": 0.68,
+      "status": "HUMAN_APPROVAL_REQUIRED",
+      "safety_check": "BLOCKED"
+    },
+    "execution_result": {
+      "status": "BLOCKED",
+      "reason": "Confidence 68.0% below 80.0% threshold",
+      "executed": false,
+      "requires_human_approval": true,
+      "safety_status": "BLOCKED_FOR_SAFETY"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T11:31:51.860365",
+    "demo_run": true,
+    "scenario_id": 3,
+    "cell_id": "cell-DEGRADED-03",
+    "metrics": {
+      "latency_ms": 290,
+      "utilization_pct": 88,
+      "packet_loss": 5.5
+    },
+    "ai_analysis": {
+      "action": "load_balancing",
+      "confidence": 0.85,
+      "reasoning": "High confidence in congestion diagnosis and load balancing solution"
+    },
+    "safety_check": {
+      "auto_execute": true,
+      "threshold": 0.8,
+      "confidence": 0.85,
+      "status": "AUTO_APPROVED",
+      "safety_check": "PASSED"
+    },
+    "execution_result": {
+      "status": "EXECUTED",
+      "action": "load_balancing",
+      "cell_id": "cell-DEGRADED-03",
+      "executed": true,
+      "safety_status": "AUTO_APPROVED",
+      "impact": {
+        "utilization_reduction": "25%",
+        "energy_savings": "15%",
+        "execution_time": "1.2s"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-11-02T11:31:51.861535",
+    "demo_run": true,
+    "scenario_id": 4,
+    "cell_id": "cell-AMBIGUOUS-04",
+    "metrics": {
+      "latency_ms": 150,
+      "utilization_pct": 72,
+      "packet_loss": 1.8
+    },
+    "ai_analysis": {
+      "action": "traffic_steering",
+      "confidence": 0.55,
+      "reasoning": "Borderline metrics - insufficient data for confident recommendation"
+    },
+    "safety_check": {
+      "auto_execute": false,
+      "threshold": 0.8,
+      "confidence": 0.55,
+      "status": "HUMAN_APPROVAL_REQUIRED",
+      "safety_check": "BLOCKED"
+    },
+    "execution_result": {
+      "status": "BLOCKED",
+      "reason": "Confidence 55.0% below 80.0% threshold",
+      "executed": false,
+      "requires_human_approval": true,
+      "safety_status": "BLOCKED_FOR_SAFETY"
+    }
+  }
+]
