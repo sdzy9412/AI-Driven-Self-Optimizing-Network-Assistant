@@ -1,0 +1,14 @@
+{
+    "timestamp": "2025-11-01T08:05:00Z",
+    "cell_id": "cell-A01",
+    "region": "eu-west-1",
+    "latency_ms": 310,
+    "packet_loss": 5.8,
+    "throughput_mbps": 118,
+    "utilization_pct": 91,
+    "energy_kwh": 3.9,
+    "status": "incident",
+    "action_applied": null,
+    "ai_confidence": 0.81
+  }
+  

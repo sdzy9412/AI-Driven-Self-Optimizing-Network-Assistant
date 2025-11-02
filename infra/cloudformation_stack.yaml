@@ -1,0 +1,140 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >
+  Minimal self-healing network demo stack:
+  - S3 bucket for telemetry snapshots
+  - DynamoDB table for change audit
+  - Lambda function to apply remediation actions and log audits
+
+Parameters:
+  BucketName:
+    Type: String
+    Default: self-healing-network-telemetry-demo
+    Description: S3 bucket to store telemetry snapshots (mock_metrics.json, before_after_metrics.csv)
+
+  TableName:
+    Type: String
+    Default: NetworkChangeAudit
+    Description: DynamoDB table for audit trail
+
+Resources:
+
+  TelemetryBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      VersioningConfiguration:
+        Status: Enabled
+
+  AuditTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Ref TableName
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: change_id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: change_id
+          KeyType: HASH
+
+  RemediationFunctionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: remediation-lambda-role-demo
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        # basic Lambda execution logging
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: DynamoDBWriteAuditLog
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - dynamodb:PutItem
+                Resource: !GetAtt AuditTable.Arn
+
+  RemediationFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: apply_recovery_action
+      Runtime: python3.12
+      Handler: index.lambda_handler
+      Role: !GetAtt RemediationFunctionRole.Arn
+      Timeout: 10
+      Environment:
+        Variables:
+          AUDIT_TABLE_NAME: !Ref TableName
+      Code:
+        ZipFile: |
+          import json
+          import os
+          import uuid
+          from datetime import datetime
+          import boto3
+
+          dynamodb = boto3.client("dynamodb")
+          TABLE_NAME = os.environ["AUDIT_TABLE_NAME"]
+
+          def lambda_handler(event, context=None):
+              """
+              Simulated remediation executor.
+              - event.record.cell_id
+              - event.record.action_applied
+              - event.record.ai_confidence
+
+              We pretend to apply the fix (e.g. traffic_steering / load_balancing)
+              and we write an auditable change record to DynamoDB.
+              """
+              record = event.get("record", {})
+              cell_id = record.get("cell_id")
+              action = record.get("action_applied")
+              confidence = record.get("ai_confidence")
+
+              change_id = str(uuid.uuid4())
+              ts = datetime.utcnow().isoformat() + "Z"
+
+              # Write audit item into DynamoDB
+              dynamodb.put_item(
+                  TableName=TABLE_NAME,
+                  Item={
+                      "change_id":       {"S": change_id},
+                      "timestamp_utc":   {"S": ts},
+                      "cell_id":         {"S": cell_id or "unknown"},
+                      "action_executed": {"S": action or "none"},
+                      "ai_confidence":   {"N": str(confidence if confidence is not None else 0)},
+                      "status":          {"S": "executed"},
+                      "message":         {"S": f"Lambda executed '{action}' on {cell_id} with confidence {confidence}"}
+                  }
+              )
+
+              result = {
+                  "change_id": change_id,
+                  "timestamp_utc": ts,
+                  "cell_id": cell_id,
+                  "action_executed": action,
+                  "ai_confidence": confidence,
+                  "status": "executed",
+                  "message": f"Lambda executed '{action}' with confidence {confidence} and logged audit record"
+              }
+
+              print(json.dumps(result, indent=2))
+              return result
+
+Outputs:
+  BucketNameOut:
+    Description: Telemetry S3 bucket name
+    Value: !Ref BucketName
+  TableNameOut:
+    Description: DynamoDB audit table name
+    Value: !Ref TableName
+  LambdaFunctionNameOut:
+    Description: Lambda function that applies remediation actions
+    Value: !Ref RemediationFunction
